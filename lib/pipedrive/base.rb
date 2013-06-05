@@ -101,7 +101,7 @@ module Pipedrive
       end
 
       def resource_path
-        "/#{name.split('::').last.downcase}s"
+        "/#{name.split('::').last.downcase.pluralize}"
       end
     end
 
