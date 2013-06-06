@@ -101,7 +101,8 @@ module Pipedrive
       end
 
       def resource_path
-        "/#{name.split('::').last.downcase.pluralize}"
+        prepare_path = name.split('::').last.downcase
+        path = prepare_path == "person" ? "/#{prepare_path}s" : "/#{prepare_path.pluralize}"
       end
     end
 
